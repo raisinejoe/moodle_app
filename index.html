@@ -10,7 +10,7 @@
   <meta http-equiv="Content-Security-Policy" content="default-src * filesystem: cdvfile: file: data: gap: https://ssl.gstatic.com; img-src * filesystem: gap: data: cdvfile: file: https://ssl.gstatic.com android-webview-video-poster: blob:; style-src 'self' 'unsafe-inline' filesystem: cdvfile: file:; script-src 'self' 'unsafe-inline' 'unsafe-eval' http://localhost:* filesystem: cdvfile: file:; media-src * filesystem: cdvfile: file: gap: blob:">
   <meta name="format-detection" content="telephone=no">
   <meta name="msapplication-tap-highlight" content="no">
-
+	<script src="build/jquery.js" type="text/javascript"></script>
   <!-- Workaround for Cordova/Angular conflict:
        http://weblogs.thinktecture.com/thomas/2017/02/cordova-vs-zonejs-or-why-is-angulars-document-event-listener-not-in-a-zone.html-->
   <script>
@@ -34,7 +34,15 @@
     document.removeEventListener = function () {
       EvTarget.prototype.removeEventListener.apply(this, arguments);
     };
+	
+	
   })();
+  
+  $(window).load(function(){
+  
+  $(".fab-close-icon").trigger("click");
+  
+  });
   </script>
 
   <script src="assets/ydn.db-dev.js"></script>
